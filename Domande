@@ -1,0 +1,26 @@
+1.  Quali sono le funzionalità che aggiungeremo all'app component in questo progetto?
+    1.  Memorizzerà una lista di articoli
+    2.  Conterrà una form per postare nuovi articoli
+
+2.  Descrivi il seguente codice HTML
+      <div>
+        <label for="link">Link:</label>
+        <input name="link">
+      </div>
+    a.  A cosa servono  il tag label e il suo attributo for?
+          Il tag <label> definisce un'etichetta.
+          L'attributo for specifica a quale elemento del modulo è associata un'etichetta.
+    b.  A cosa servono  il tag input e il suo attributo name?
+          Il tag <input> specifica un campo di input in cui l'utente può inserire i dati.
+          L'attributo name specifica il nome di un elemento <input>.
+    
+3.  Descrivi il seguente codice HTML
+      <button (click)="addArticle()">
+    a.  A cosa serve il tag button?   
+          Il tag <button> definisce un pulsante cliccabile.
+    b.  A cosa serve l'evento (click)?
+          Il metodo click() simula un clic del mouse su un elemento.
+    c.  A cos'è il valore "addArticle()" associato all'evento click?
+          Identifica la destinazione del Binding
+
+
