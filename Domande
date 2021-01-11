@@ -22,5 +22,51 @@
           Il metodo click() simula un clic del mouse su un elemento.
     c.  A cos'è il valore "addArticle()" associato all'evento click?
           Identifica la destinazione del Binding
+  
+4.  Cos'è un evento?
+        Un evento è un'azione che può essere gestito dal software.
+5.  Cos'è un gestore di un evento?
+        Un gestore di un evento è colui che istruisce il programma stesso sulle azioni che devono essere eseguite in risposta ad uno specifico evento.
+6.  Cosa puoi dire sul seguente metodo?
+        addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
+            console.log(`Adding article title: ${title.value} and link: ${link.value}`);
+            return false;
+        }
+    a.  Di quale tipo sono i parametri?
+        Stringhe
+    b.  Come si ottiene il valore scritto nell'HTMLInputElement passata come parametro?
+        Tramite la notazione ${title.value}
+    c.  A cosa serve la notazione ${title.value}?
+        Per ottenere il valore di title.
+    d.  Per quale ragione non si scrive ${title} ?
+        Perchè title è il nome della variabile
+        
+7.  Cosa puoi dire del seguente codice?
+      <div>
+        <label for="title">Title:</label>
+        <input name="title" #newtitle> //Aggiunta una variabile di template
+      </div>
+      <div>
+        <label for="link">Link:</label>
+        <input name="link" #newlink> //Aggiunta una variabile di template
+      </div>
+      <button (click)="addArticle(newtitle, newlink)"> //Passiamo le variabili come parametro
+        Submit link
+      </button>
+      
+      a. A cosa serve la notazione #nomevariabile?
+            Per indirizzare il tag
+      b. Cos'è una variabile di template?
+            Per legare un tag a una variabile.
+      c. Come puoi passare il contenuto da un template html al controllore di un componente (component.ts)?
+            Usando un metodo che riceve i parametri come argomenti.
+      
+8.  Cos'è il Binding?
+        a.  Come si lega (Bind) un'etichetta input a una variable di template?
+            Assegnando il variabile di template dentro l'etichetta input.
+        b.  Come si lega (bind) un'azione a un evento?
+            Per legare un'azione a un evento, racchiudere il nome dell'evento tra parentesi e assegnargli un nome tra virgolette.
+
+
 
 
