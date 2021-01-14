@@ -67,6 +67,8 @@
         b.  Come si lega (bind) un'azione a un evento?
             Per legare un'azione a un evento, racchiudere il nome dell'evento tra parentesi e assegnargli un nome tra virgolette.
 
+1. Come si installa ngBootstrap?
+    ng add @ng-bootstrap/ng-bootstrap
 
 
 
