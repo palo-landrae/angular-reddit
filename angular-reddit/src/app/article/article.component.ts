@@ -25,5 +25,9 @@ export class ArticleComponent implements OnInit {
     return false;
   }
 
+  onNavigate(): Boolean{
+    this.article.onNavigate();
+    return false;
+  }
   ngOnInit() {}
 }

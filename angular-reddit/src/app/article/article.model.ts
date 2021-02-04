@@ -16,6 +16,10 @@ export class Article {
     this.votes -= 1;
   }
 
+  onNavigate(): void {
+    window.open(this.link, "_blank");
+  }
+
   // domain() is a utility function that extracts
   // the domain from a URL, which we'll explain shortly
  // domain() is a utility function that extracts the domain from a URL

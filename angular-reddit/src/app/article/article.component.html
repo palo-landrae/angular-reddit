@@ -2,12 +2,12 @@
       <h3> {{ article.votes }} Points </h3>
   </div>
   <div class="card-body">
-    <a href="{{article.link}}" target="_blank">{{ article.title }}</a>
-    <span class="badge badge-pill badge-info">{{article.domain()}}</span>
+    <a (click)="onNavigate()">{{article.title}}</a>
+    <!--<span class="badge badge-pill badge-info">{{article.domain()}}</span>-->
   </div>
   <div class="card-footer">
-     <div class="btn-group">
-        <a href (click)="voteUp()" class="btn btn-secondary"> upvote </a>
-        <a href (click)="voteDown()" class="btn btn-secondary"> downvote </a>
-    </div>
+    <div class="btn-group">
+      <a href (click)="voteUp()" class="btn btn-secondary"> upvote </a>
+      <a href (click)="voteDown()" class="btn btn-secondary"> downvote </a>
   </div>
+</div>
