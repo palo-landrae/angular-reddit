@@ -2,7 +2,9 @@
     "posts": [
       {
         "id": 1,
-        "title": "hello"
+        "title": "Google",
+        "link": "https://www.google.it/",
+        "votes": 28
       }
     ],
     "profile": {

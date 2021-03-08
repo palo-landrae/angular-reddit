@@ -9,8 +9,11 @@
         <label for="link">Link:</label>
         <input name="link" #newlink class="form-control">
       </div>
-    <button (click)="addArticle(newtitle, newlink)" class="btn btn-primary">
+    <button (click)="addArticle(newtitle, newlink)" class="btn btn-primary mx-1">
       Submit link
+    </button>
+    <button (click)="showArticle()" class="btn btn-primary mx-1">
+      Show links
     </button>
   </form>
 </div>
