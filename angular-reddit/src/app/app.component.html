@@ -18,8 +18,12 @@
   </form>
 </div>
 
+
 <div class="container">
+  <div *ngIf="loading">loading...</div>
   <!-- start adding here -->
   <app-article *ngFor="let art of sortedArticles()" [article]="art"></app-article>
+  
   <!-- end adding here -->
 </div>
+

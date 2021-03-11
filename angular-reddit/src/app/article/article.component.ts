@@ -16,8 +16,6 @@ export class ArticleComponent implements OnInit {
    
   }
 
-  
-
   voteUp(): Boolean {
     this.article.voteUp(); //Modificato qui
     return false;

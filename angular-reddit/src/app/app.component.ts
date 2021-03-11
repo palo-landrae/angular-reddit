@@ -9,8 +9,8 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-reddit';
   data: Object;
+  loading: boolean;
   o: Observable<Object>;
   articles = new Array<Article>();
   constructor(public http: HttpClient) { }
@@ -18,38 +18,38 @@ export class AppComponent {
   addArticle(title: HTMLInputElement, link: HTMLInputElement): boolean {
     console.log(`Adding article title: ${title.value} and link: ${link.value}`);
     this.articles.push(new Article(title.value, link.value, 0));
-
-    this.http
-    .post('https://my-json-server.typicode.com/palo-landrae/angular-reddit/posts',
-      JSON.stringify({
-        id: '1',
-        title: title.value,
-        link: link.value
-      })
-    )
-    .subscribe(data => {
-      this.data = data;
-      console.log('POST Request is successful ', data);
-    });
+    this.postData();
     title.value = '';
     link.value = '';
     return false;
   }
 
   showArticle(): boolean {
+    this.loading = true;
     this.o = this.http.get('https://my-json-server.typicode.com/palo-landrae/angular-reddit/posts');
     this.o.subscribe(this.getData);
-    //this.articles.push(new Article(.value, link.value, 0));
     return false;
   }
 
   sortedArticles(): Article[] {
     return this.articles.sort((a: Article, b: Article) => b.votes - a.votes);
   }
+
   getData = (d: Object) => {
-    this.data = new Object(d);
+    this.data = d;
+    this.loading = false;
     for (var i in this.data)
-      console.log(this.data[i]);
       this.articles.push(new Article(this.data[i].title, this.data[i].link, this.data[i].votes));
+    console.log('GET Request is successful ', this.data);
+  }
+
+  postData() : void{
+    this.loading = true;
+    this.http.post('https://my-json-server.typicode.com/palo-landrae/angular-reddit/posts',
+      this.articles).subscribe(data => {
+        this.data = data;
+        console.log('POST Request is successful ', data);
+        this.loading = false;
+      });
   }
 }
